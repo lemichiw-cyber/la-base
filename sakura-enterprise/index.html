@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  Sakura Enterprise — Portal principal (single page)
+  ------------------------------------------------------------
+  Archivos: index.html · style.css · script.js · logo.png
+  Sin frameworks: solo HTML, CSS y un poco de JavaScript.
+  Listo para publicar en GitHub Pages.
+  ============================================================
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sakura Enterprise — Portal</title>
+  <meta name="description" content="Sakura Enterprise: tecnología con raíces en la tradición. Portal principal de nuestras divisiones.">
+
+  <!-- Favicon: usa el mismo logo -->
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <!-- Tipografías de Google Fonts:
+       Michroma  -> títulos (geométrica ancha, como el logo)
+       Inter     -> texto corrido (sans-serif sobria) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ ENCABEZADO FIJO ============ -->
+  <header class="site-header" id="inicio">
+    <div class="header-inner">
+      <a class="brand" href="#inicio" aria-label="Sakura Enterprise, ir al inicio">
+        <!-- Logo pequeño en el encabezado -->
+        <img class="brand-logo" src="logo.png" alt="Logotipo de Sakura Enterprise">
+        <span class="brand-name">SAKURA&nbsp;ENTERPRISE</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="#divisiones">Divisiones</a>
+        <a href="#nosotros">Sobre nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <!-- Kanji decorativo muy tenue en el fondo -->
+    <span class="hero-kanji" aria-hidden="true">桜</span>
+
+    <!-- Contenedor de pétalos que caen (lo rellena script.js) -->
+    <div class="petals" id="petals" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <!-- Logo grande centrado -->
+      <img class="hero-logo" src="logo.png"
+           alt="Logotipo de Sakura Enterprise: flor de cerezo rosa con anillo orbital y el texto SAKURA ENTERPRISE">
+
+      <h1 class="hero-title" id="hero-title">Tecnología con raíces en la tradición</h1>
+      <p class="hero-sub">Ingeniería precisa, diseño sereno.</p>
+
+      <a class="btn btn-primary" href="#divisiones">Ver divisiones</a>
+    </div>
+  </section>
+
+  <!-- ============ DIVISIONES ============ -->
+  <section class="section" id="divisiones" aria-labelledby="divisiones-title">
+    <div class="section-head">
+      <h2 class="section-title" id="divisiones-title">Divisiones</h2>
+      <p class="section-sub">Tres líneas de trabajo, un mismo estándar de calidad.</p>
+    </div>
+
+    <div class="cards">
+
+      <!-- Tarjeta: Proyecto Web -->
+      <article class="card">
+        <h3 class="card-title">Proyecto Web</h3>
+        <!-- Descripción editable: cambia solo esta línea de texto -->
+        <p class="card-text">Desarrollo de sitios y aplicaciones web a medida, con código limpio y diseño centrado en el usuario.</p>
+        <a class="btn btn-outline" href="https://lemichiw-cyber.github.io/proyecto_web/">Visitar sitio</a>
+      </article>
+
+      <!-- Tarjeta: SI Ventas -->
+      <article class="card">
+        <h3 class="card-title">SI Ventas</h3>
+        <p class="card-text">Sistema de información para la gestión comercial: pedidos, inventario y seguimiento de clientes.</p>
+        <a class="btn btn-outline" href="https://lemichiw-cyber.github.io/si-ventas-/">Visitar sitio</a>
+      </article>
+
+      <!-- Tarjeta: Neko Robles Café -->
+      <article class="card">
+        <h3 class="card-title">Neko Robles Café</h3>
+        <p class="card-text">Punto de encuentro con identidad propia: carta, reservas y pedidos en línea en un solo lugar.</p>
+        <a class="btn btn-outline" href="https://lemichiw-cyber.github.io/neko-robles-cafe/">Visitar sitio</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ SOBRE NOSOTROS ============ -->
+  <section class="section" id="nosotros" aria-labelledby="nosotros-title">
+    <div class="section-head">
+      <h2 class="section-title" id="nosotros-title">Sobre nosotros</h2>
+    </div>
+
+    <p class="about-text">
+      Sakura Enterprise nació en 2021 en Kioto como un pequeño estudio de ingeniería de software.
+      Creemos que la tecnología funciona mejor cuando respeta el ritmo de quien la usa: por eso
+      combinamos la precisión del desarrollo moderno con la calma del diseño japonés. Hoy somos
+      tres divisiones que comparten una misma forma de trabajar: medir dos veces, construir una.
+    </p>
+
+    <!-- Tres datos clave -->
+    <dl class="stats">
+      <div class="stat">
+        <dt class="stat-label">Fundación</dt>
+        <dd class="stat-value">2021</dd>
+      </div>
+      <div class="stat">
+        <dt class="stat-label">Divisiones</dt>
+        <dd class="stat-value">3</dd>
+      </div>
+      <div class="stat">
+        <dt class="stat-label">Sede</dt>
+        <dd class="stat-value">Kioto, Japón</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section class="section" id="contacto" aria-labelledby="contacto-title">
+    <div class="section-head">
+      <h2 class="section-title" id="contacto-title">Contacto</h2>
+      <p class="section-sub">Escríbenos y te responderemos en un plazo de dos días hábiles.</p>
+    </div>
+
+    <div class="contact-grid">
+      <a class="contact-item" href="mailto:hola@sakura-enterprise.example">
+        <span class="contact-label">Correo</span>
+        <span class="contact-value">hola@sakura-enterprise.example</span>
+      </a>
+      <a class="contact-item" href="https://github.com/" target="_blank" rel="noopener">
+        <span class="contact-label">GitHub</span>
+        <span class="contact-value">github.com/sakura-enterprise</span>
+      </a>
+      <a class="contact-item" href="https://x.com/" target="_blank" rel="noopener">
+        <span class="contact-label">X</span>
+        <span class="contact-value">@sakura_enterprise</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ PIE DE PÁGINA ============ -->
+  <footer class="site-footer">
+    <!-- Sello hanko: cuadrado rosa con el kanji 桜 -->
+    <span class="hanko" aria-hidden="true">桜</span>
+
+    <p class="footer-copy">Sakura Enterprise © 2026</p>
+    <p class="footer-note">Empresa ficticia creada como proyecto escolar.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
