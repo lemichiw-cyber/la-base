@@ -10,6 +10,7 @@ https://lemichiw-cyber.github.io/la-base/sakura-enterprise/
 
 ```
 la-base/
+├── index.html                   # Redirige a sakura-enterprise/
 ├── 404.html                     # Página 404 del proyecto
 ├── robots.txt                   # Indexación
 ├── sitemap.xml                  # Mapa del sitio
@@ -25,6 +26,7 @@ la-base/
 ## Identidad y contacto
 
 - **WhatsApp:** +503 7998 0884 — https://wa.me/50379980884
+- **Teléfono:** +503 7998 0884 — tel:+50379980884
 - **Instagram:** https://www.instagram.com/sakura_enterprise2/
 - **X:** https://x.com/sakura_enter
 - **Facebook:** no se utiliza.
