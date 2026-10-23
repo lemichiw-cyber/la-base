@@ -1196,6 +1196,8 @@ h1, h2, h3 {
 @media (max-width: 900px) {
   :root { --header-h: 64px; }
 
+  body { background-attachment: scroll; }
+
   .nav-toggle { display: inline-flex; }
 
   .site-nav {
