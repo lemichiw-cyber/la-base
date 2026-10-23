@@ -3,164 +3,424 @@
   ============================================================
   Sakura Enterprise — Portal principal (single page)
   ------------------------------------------------------------
-  Archivos: index.html · style.css · script.js · logo.png
-  Sin frameworks: solo HTML, CSS y un poco de JavaScript.
-  Listo para publicar en GitHub Pages.
+  Archivos: index.html · style.css · script.js · assets/
+  Sin frameworks: solo HTML, CSS y JavaScript.
+  Publicado en GitHub Pages.
   ============================================================
 -->
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sakura Enterprise — Portal</title>
-  <meta name="description" content="Sakura Enterprise: tecnología con raíces en la tradición. Portal principal de nuestras divisiones.">
 
-  <!-- Favicon: usa el mismo logo -->
-  <link rel="icon" type="image/png" href="logo.png">
+  <title>Sakura Enterprise — Tecnología con raíces en la tradición</title>
+  <meta name="description" content="Sakura Enterprise es un estudio de ingeniería y diseño digital. Creamos sitios web, sistemas de venta y experiencias locales con precisión, calma y atención al detalle.">
+  <meta name="author" content="Sakura Enterprise">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0A050D">
 
-  <!-- Tipografías de Google Fonts:
-       Michroma  -> títulos (geométrica ancha, como el logo)
-       Inter     -> texto corrido (sans-serif sobria) -->
+  <!-- URL canónica y compartir en redes -->
+  <link rel="canonical" href="https://lemichiw-cyber.github.io/la-base/sakura-enterprise/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Sakura Enterprise">
+  <meta property="og:title" content="Sakura Enterprise — Tecnología con raíces en la tradición">
+  <meta property="og:description" content="Ingeniería precisa, diseño sereno. Tres divisiones, un mismo estándar de calidad.">
+  <meta property="og:url" content="https://lemichiw-cyber.github.io/la-base/sakura-enterprise/">
+  <meta property="og:image" content="https://lemichiw-cyber.github.io/la-base/sakura-enterprise/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Banner de Sakura Enterprise con una flor de cerezo y el texto Tecnología con raíces en la tradición">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@sakura_enter">
+  <meta name="twitter:creator" content="@sakura_enter">
+  <meta name="twitter:title" content="Sakura Enterprise — Tecnología con raíces en la tradición">
+  <meta name="twitter:description" content="Ingeniería precisa, diseño sereno. Tres divisiones, un mismo estándar de calidad.">
+  <meta name="twitter:image" content="https://lemichiw-cyber.github.io/la-base/sakura-enterprise/assets/og-image.jpg">
+  <meta name="twitter:image:alt" content="Banner de Sakura Enterprise con una flor de cerezo y el texto Tecnología con raíces en la tradición">
+
+  <!-- Iconos y PWA -->
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Tipografías: Michroma para títulos, Inter para texto -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Michroma&display=swap" rel="stylesheet">
 
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Datos estructurados para buscadores -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sakura Enterprise",
+    "url": "https://lemichiw-cyber.github.io/la-base/sakura-enterprise/",
+    "logo": "https://lemichiw-cyber.github.io/la-base/sakura-enterprise/assets/logo.png",
+    "image": "https://lemichiw-cyber.github.io/la-base/sakura-enterprise/assets/og-image.jpg",
+    "description": "Estudio de ingeniería y diseño digital. Sitios web, sistemas de venta y experiencias locales.",
+    "sameAs": [
+      "https://www.instagram.com/sakura_enterprise2/",
+      "https://x.com/sakura_enter"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+50379980884",
+      "contactType": "customer service",
+      "availableLanguage": ["es"]
+    }
+  }
+  </script>
 </head>
 <body>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <!-- ============ ENCABEZADO FIJO ============ -->
   <header class="site-header" id="inicio">
     <div class="header-inner">
       <a class="brand" href="#inicio" aria-label="Sakura Enterprise, ir al inicio">
-        <!-- Logo pequeño en el encabezado -->
-        <img class="brand-logo" src="logo.png" alt="Logotipo de Sakura Enterprise">
-        <span class="brand-name">SAKURA&nbsp;ENTERPRISE</span>
+        <img class="brand-logo" src="assets/logo-icon.png" width="240" height="174"
+             alt="" decoding="async">
+        <span class="brand-name">SAKURA&nbsp;<span class="brand-name-enterprise">ENTERPRISE</span></span>
       </a>
 
-      <nav class="site-nav" aria-label="Navegación principal">
+      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Abrir menú">
+        <span class="nav-toggle-box" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
         <a href="#divisiones">Divisiones</a>
-        <a href="#nosotros">Sobre nosotros</a>
+        <a href="#nosotros">Nosotros</a>
         <a href="#contacto">Contacto</a>
+
+        <div class="nav-socials" role="group" aria-label="Redes sociales">
+          <a class="icon-link" href="https://wa.me/50379980884?text=Hola%20Sakura%20Enterprise%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios."
+             target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de Sakura Enterprise">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.25 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.8-.23-.08-.4-.12-.56.12-.17.25-.64.8-.78.96-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.17 1.73 2.64 4.19 3.7.59.25 1.05.4 1.41.51.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
+          </a>
+          <a class="icon-link" href="https://www.instagram.com/sakura_enterprise2/"
+             target="_blank" rel="noopener noreferrer" aria-label="Instagram de Sakura Enterprise">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.17.43.37 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.17-1.06.37-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.42a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.17-.43-.37-1.06-.42-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.17 1.06-.37 2.23-.42C8.42 2.17 8.8 2.16 12 2.16Zm0 1.8c-3.15 0-3.52.01-4.76.07-1.15.05-1.77.24-2.18.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.18-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.05 1.15.24 1.77.4 2.18.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.18.4 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c1.15-.05 1.77-.24 2.18-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.18.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.05-1.15-.24-1.77-.4-2.18a3.6 3.6 0 0 0-.88-1.35 3.6 3.6 0 0 0-1.35-.88c-.41-.16-1.03-.35-2.18-.4-1.24-.06-1.61-.07-4.76-.07Zm0 3.06a4.98 4.98 0 1 1 0 9.96 4.98 4.98 0 0 1 0-9.96Zm0 8.21a3.23 3.23 0 1 0 0-6.46 3.23 3.23 0 0 0 0 6.46Zm6.34-8.4a1.16 1.16 0 1 1-2.32 0 1.16 1.16 0 0 1 2.32 0Z"/></svg>
+          </a>
+          <a class="icon-link" href="https://x.com/sakura_enter"
+             target="_blank" rel="noopener noreferrer" aria-label="X de Sakura Enterprise">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.23l-4.88-6.38L6.5 22H3.38l7.24-8.28L1.6 2h6.39l4.41 5.83L18.9 2Zm-1.1 17.84h1.72L7.1 3.96H5.25L17.8 19.84Z"/></svg>
+          </a>
+        </div>
+
+        <a class="btn btn-primary nav-cta" href="#contacto">Hablemos</a>
       </nav>
     </div>
   </header>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero" aria-labelledby="hero-title">
-    <!-- Kanji decorativo muy tenue en el fondo -->
-    <span class="hero-kanji" aria-hidden="true">桜</span>
+  <main id="contenido">
 
-    <!-- Contenedor de pétalos que caen (lo rellena script.js) -->
-    <div class="petals" id="petals" aria-hidden="true"></div>
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <span class="hero-kanji" aria-hidden="true">桜</span>
+      <div class="petals" id="petals" aria-hidden="true"></div>
 
-    <div class="hero-content">
-      <!-- Logo grande centrado -->
-      <img class="hero-logo" src="logo.png"
-           alt="Logotipo de Sakura Enterprise: flor de cerezo rosa con anillo orbital y el texto SAKURA ENTERPRISE">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Estudio de ingeniería y diseño digital</p>
 
-      <h1 class="hero-title" id="hero-title">Tecnología con raíces en la tradición</h1>
-      <p class="hero-sub">Ingeniería precisa, diseño sereno.</p>
+        <img class="hero-logo" src="assets/logo.png" width="660" height="496"
+             alt="Logotipo de Sakura Enterprise: flor de cerezo rosa con anillo orbital y el texto SAKURA ENTERPRISE"
+             fetchpriority="high">
 
-      <a class="btn btn-primary" href="#divisiones">Ver divisiones</a>
-    </div>
-  </section>
+        <h1 class="hero-title" id="hero-title">Tecnología con raíces en la tradición</h1>
+        <p class="hero-sub">Ingeniería precisa, diseño sereno. Construimos experiencias digitales que se sienten simples, rápidas y memorables.</p>
 
-  <!-- ============ DIVISIONES ============ -->
-  <section class="section" id="divisiones" aria-labelledby="divisiones-title">
-    <div class="section-head">
-      <h2 class="section-title" id="divisiones-title">Divisiones</h2>
-      <p class="section-sub">Tres líneas de trabajo, un mismo estándar de calidad.</p>
-    </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#divisiones">Ver divisiones</a>
+          <a class="btn btn-ghost" href="https://wa.me/50379980884?text=Hola%20Sakura%20Enterprise%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios."
+             target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.25 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.8-.23-.08-.4-.12-.56.12-.17.25-.64.8-.78.96-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.17 1.73 2.64 4.19 3.7.59.25 1.05.4 1.41.51.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
+            Hablemos por WhatsApp
+          </a>
+        </div>
 
-    <div class="cards">
-
-      <!-- Tarjeta: Proyecto Web -->
-      <article class="card">
-        <h3 class="card-title">Proyecto Web</h3>
-        <!-- Descripción editable: cambia solo esta línea de texto -->
-        <p class="card-text">Desarrollo de sitios y aplicaciones web a medida, con código limpio y diseño centrado en el usuario.</p>
-        <a class="btn btn-outline" href="https://lemichiw-cyber.github.io/proyecto_web/">Visitar sitio</a>
-      </article>
-
-      <!-- Tarjeta: SI Ventas -->
-      <article class="card">
-        <h3 class="card-title">SI Ventas</h3>
-        <p class="card-text">Sistema de información para la gestión comercial: pedidos, inventario y seguimiento de clientes.</p>
-        <a class="btn btn-outline" href="https://lemichiw-cyber.github.io/si-ventas-/">Visitar sitio</a>
-      </article>
-
-      <!-- Tarjeta: Neko Robles Café -->
-      <article class="card">
-        <h3 class="card-title">Neko Robles Café</h3>
-        <p class="card-text">Punto de encuentro con identidad propia: carta, reservas y pedidos en línea en un solo lugar.</p>
-        <a class="btn btn-outline" href="https://lemichiw-cyber.github.io/neko-robles-cafe/">Visitar sitio</a>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- ============ SOBRE NOSOTROS ============ -->
-  <section class="section" id="nosotros" aria-labelledby="nosotros-title">
-    <div class="section-head">
-      <h2 class="section-title" id="nosotros-title">Sobre nosotros</h2>
-    </div>
-
-    <p class="about-text">
-      Sakura Enterprise nació en 2021 en Kioto como un pequeño estudio de ingeniería de software.
-      Creemos que la tecnología funciona mejor cuando respeta el ritmo de quien la usa: por eso
-      combinamos la precisión del desarrollo moderno con la calma del diseño japonés. Hoy somos
-      tres divisiones que comparten una misma forma de trabajar: medir dos veces, construir una.
-    </p>
-
-    <!-- Tres datos clave -->
-    <dl class="stats">
-      <div class="stat">
-        <dt class="stat-label">Fundación</dt>
-        <dd class="stat-value">2021</dd>
+        <ul class="hero-tags" aria-label="Especialidades">
+          <li>Diseño centrado en personas</li>
+          <li>Desarrollo web</li>
+          <li>Sistemas de venta</li>
+        </ul>
       </div>
-      <div class="stat">
-        <dt class="stat-label">Divisiones</dt>
-        <dd class="stat-value">3</dd>
-      </div>
-      <div class="stat">
-        <dt class="stat-label">Sede</dt>
-        <dd class="stat-value">Kioto, Japón</dd>
-      </div>
-    </dl>
-  </section>
 
-  <!-- ============ CONTACTO ============ -->
-  <section class="section" id="contacto" aria-labelledby="contacto-title">
-    <div class="section-head">
-      <h2 class="section-title" id="contacto-title">Contacto</h2>
-      <p class="section-sub">Escríbenos y te responderemos en un plazo de dos días hábiles.</p>
-    </div>
+      <a class="hero-scroll" href="#divisiones" aria-label="Bajar a las divisiones">
+        <span aria-hidden="true"></span>
+      </a>
+    </section>
 
-    <div class="contact-grid">
-      <a class="contact-item" href="mailto:hola@sakura-enterprise.example">
-        <span class="contact-label">Correo</span>
-        <span class="contact-value">hola@sakura-enterprise.example</span>
-      </a>
-      <a class="contact-item" href="https://github.com/" target="_blank" rel="noopener">
-        <span class="contact-label">GitHub</span>
-        <span class="contact-value">github.com/sakura-enterprise</span>
-      </a>
-      <a class="contact-item" href="https://x.com/" target="_blank" rel="noopener">
-        <span class="contact-label">X</span>
-        <span class="contact-value">@sakura_enterprise</span>
-      </a>
-    </div>
-  </section>
+    <!-- ============ DIVISIONES ============ -->
+    <section class="section" id="divisiones" aria-labelledby="divisiones-title">
+      <div class="section-head">
+        <p class="section-eyebrow">Lo que hacemos</p>
+        <h2 class="section-title" id="divisiones-title">Divisiones</h2>
+        <p class="section-sub">Tres líneas de trabajo, un mismo estándar de calidad.</p>
+      </div>
+
+      <div class="cards">
+
+        <article class="card">
+          <div class="card-top">
+            <span class="card-index" aria-hidden="true">02</span>
+            <span class="card-badge">Web app</span>
+          </div>
+          <h3 class="card-title">Proyecto Web</h3>
+          <p class="card-text">Desarrollo de sitios y aplicaciones web a medida, con código limpio y diseño centrado en el usuario.</p>
+          <ul class="card-tags" aria-label="Especialidades de Proyecto Web">
+            <li>UI/UX</li>
+            <li>Frontend</li>
+            <li>PWA</li>
+          </ul>
+          <a class="card-link" href="https://lemichiw-cyber.github.io/proyecto_web/"
+             target="_blank" rel="noopener noreferrer">
+            Visitar sitio <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <span class="card-index" aria-hidden="true">03</span>
+            <span class="card-badge">Café &amp; reservas</span>
+          </div>
+          <h3 class="card-title">Neko Robles Café</h3>
+          <p class="card-text">Punto de encuentro con identidad propia: carta, reservas y pedidos en línea en un solo lugar.</p>
+          <ul class="card-tags" aria-label="Especialidades de Neko Robles Café">
+            <li>Menú</li>
+            <li>Reservas</li>
+            <li>Local</li>
+          </ul>
+          <a class="card-link" href="https://lemichiw-cyber.github.io/neko-robles-cafe/"
+             target="_blank" rel="noopener noreferrer">
+            Visitar sitio <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <span class="card-index" aria-hidden="true">04</span>
+            <span class="card-badge">E-commerce</span>
+          </div>
+          <h3 class="card-title">SI Ventas</h3>
+          <p class="card-text">Sistema de información para la gestión comercial: pedidos, inventario y seguimiento de clientes.</p>
+          <ul class="card-tags" aria-label="Especialidades de SI Ventas">
+            <li>Catálogo</li>
+            <li>Checkout</li>
+            <li>Admin</li>
+          </ul>
+          <a class="card-link" href="https://lemichiw-cyber.github.io/si-ventas-/"
+             target="_blank" rel="noopener noreferrer">
+            Visitar sitio <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ SOBRE NOSOTROS ============ -->
+    <section class="section" id="nosotros" aria-labelledby="nosotros-title">
+      <div class="section-head">
+        <p class="section-eyebrow">Quiénes somos</p>
+        <h2 class="section-title" id="nosotros-title">Sobre nosotros</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>
+            Sakura Enterprise nació en 2021 en Kioto como un pequeño estudio de ingeniería de software.
+            Creemos que la tecnología funciona mejor cuando respeta el ritmo de quien la usa: por eso
+            combinamos la precisión del desarrollo moderno con la calma del diseño japonés.
+          </p>
+          <p>
+            Hoy somos tres divisiones que comparten una misma forma de trabajar: medir dos veces,
+            construir una. Cada proyecto empieza escuchando, se diseña con intención y se entrega
+            listo para crecer.
+          </p>
+        </div>
+
+        <dl class="stats">
+          <div class="stat">
+            <dt class="stat-label">Fundación</dt>
+            <dd class="stat-value">2021</dd>
+          </div>
+          <div class="stat">
+            <dt class="stat-label">Divisiones</dt>
+            <dd class="stat-value">3</dd>
+          </div>
+          <div class="stat">
+            <dt class="stat-label">Sede</dt>
+            <dd class="stat-value">Kioto, Japón</dd>
+          </div>
+        </dl>
+      </div>
+
+      <ol class="process" aria-label="Nuestro proceso de trabajo">
+        <li class="process-step">
+          <span class="process-number" aria-hidden="true">01</span>
+          <h3>Escuchar</h3>
+          <p>Entendemos el negocio, las personas y lo que realmente necesita resolver el proyecto.</p>
+        </li>
+        <li class="process-step">
+          <span class="process-number" aria-hidden="true">02</span>
+          <h3>Diseñar</h3>
+          <p>Traducimos ideas en una experiencia clara, accesible y coherente con la identidad de la marca.</p>
+        </li>
+        <li class="process-step">
+          <span class="process-number" aria-hidden="true">03</span>
+          <h3>Construir</h3>
+          <p>Escribimos código mantenible, medimos el rendimiento y cuidamos cada detalle antes de publicar.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="section section-contact" id="contacto" aria-labelledby="contacto-title">
+      <div class="section-head">
+        <p class="section-eyebrow">Hablemos</p>
+        <h2 class="section-title" id="contacto-title">Contacto</h2>
+        <p class="section-sub">Cuéntanos qué tienes en mente. Respondemos en un plazo de dos días hábiles.</p>
+      </div>
+
+      <div class="contact-layout">
+        <div class="contact-list">
+          <a class="contact-card" href="https://wa.me/50379980884?text=Hola%20Sakura%20Enterprise%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios."
+             target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon contact-icon--wa" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.25 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.8-.23-.08-.4-.12-.56.12-.17.25-.64.8-.78.96-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.17 1.73 2.64 4.19 3.7.59.25 1.05.4 1.41.51.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
+            </span>
+            <span class="contact-copy">
+              <span class="contact-label">WhatsApp</span>
+              <span class="contact-value">+503 7998 0884</span>
+            </span>
+            <span class="contact-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="contact-card" href="https://www.instagram.com/sakura_enterprise2/"
+             target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" focusable="false"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.17.43.37 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.17-1.06.37-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.42a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.17-.43-.37-1.06-.42-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.17 1.06-.37 2.23-.42C8.42 2.17 8.8 2.16 12 2.16Zm0 1.8c-3.15 0-3.52.01-4.76.07-1.15.05-1.77.24-2.18.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.18-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.05 1.15.24 1.77.4 2.18.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.18.4 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c1.15-.05 1.77-.24 2.18-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.18.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.05-1.15-.24-1.77-.4-2.18a3.6 3.6 0 0 0-.88-1.35 3.6 3.6 0 0 0-1.35-.88c-.41-.16-1.03-.35-2.18-.4-1.24-.06-1.61-.07-4.76-.07Zm0 3.06a4.98 4.98 0 1 1 0 9.96 4.98 4.98 0 0 1 0-9.96Zm0 8.21a3.23 3.23 0 1 0 0-6.46 3.23 3.23 0 0 0 0 6.46Zm6.34-8.4a1.16 1.16 0 1 1-2.32 0 1.16 1.16 0 0 1 2.32 0Z"/></svg>
+            </span>
+            <span class="contact-copy">
+              <span class="contact-label">Instagram</span>
+              <span class="contact-value">@sakura_enterprise2</span>
+            </span>
+            <span class="contact-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="contact-card" href="https://x.com/sakura_enter"
+             target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" focusable="false"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.23l-4.88-6.38L6.5 22H3.38l7.24-8.28L1.6 2h6.39l4.41 5.83L18.9 2Zm-1.1 17.84h1.72L7.1 3.96H5.25L17.8 19.84Z"/></svg>
+            </span>
+            <span class="contact-copy">
+              <span class="contact-label">X</span>
+              <span class="contact-value">@sakura_enter</span>
+            </span>
+            <span class="contact-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <div class="contact-note">
+            <span class="contact-note-dot" aria-hidden="true"></span>
+            <p>Atención de lunes a viernes, de 9:00 a 18:00 (GMT-6).</p>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contact-form" action="#" method="post">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Nombre</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="Tu nombre" required>
+            </div>
+            <div class="field">
+              <label for="email">Correo</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="tu@correo.com" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="5" placeholder="Cuéntanos qué necesitas, para cuándo y qué presupuesto tienes en mente." required></textarea>
+          </div>
+
+          <div class="form-footer">
+            <button class="btn btn-primary" type="submit">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.25 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.8-.23-.08-.4-.12-.56.12-.17.25-.64.8-.78.96-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.17 1.73 2.64 4.19 3.7.59.25 1.05.4 1.41.51.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
+              Enviar por WhatsApp
+            </button>
+            <p class="form-note">Se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+          </div>
+
+          <noscript>
+            <p class="form-note">El formulario necesita JavaScript. También puedes escribirnos directamente por <a href="https://wa.me/50379980884?text=Hola%20Sakura%20Enterprise%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>
+          </noscript>
+
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
 
   <!-- ============ PIE DE PÁGINA ============ -->
   <footer class="site-footer">
-    <!-- Sello hanko: cuadrado rosa con el kanji 桜 -->
-    <span class="hanko" aria-hidden="true">桜</span>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="#inicio" aria-label="Sakura Enterprise, ir al inicio">
+          <img class="brand-logo" src="assets/logo-icon.png" width="240" height="174" alt="" loading="lazy" decoding="async">
+          <span class="brand-name">SAKURA&nbsp;<span class="brand-name-enterprise">ENTERPRISE</span></span>
+        </a>
+        <p>Ingeniería precisa, diseño sereno.</p>
+      </div>
 
-    <p class="footer-copy">Sakura Enterprise © 2026</p>
-    <p class="footer-note">Empresa ficticia creada como proyecto escolar.</p>
+      <nav class="footer-nav" aria-label="Navegación del pie de página">
+        <a href="#divisiones">Divisiones</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="footer-social">
+        <span class="footer-label">Síguenos</span>
+        <div class="social-row">
+          <a class="icon-link" href="https://wa.me/50379980884?text=Hola%20Sakura%20Enterprise%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios."
+             target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de Sakura Enterprise">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.25 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.8-.23-.08-.4-.12-.56.12-.17.25-.64.8-.78.96-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.17 1.73 2.64 4.19 3.7.59.25 1.05.4 1.41.51.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
+          </a>
+          <a class="icon-link" href="https://www.instagram.com/sakura_enterprise2/"
+             target="_blank" rel="noopener noreferrer" aria-label="Instagram de Sakura Enterprise">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.17.43.37 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.17-1.06.37-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.42a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.17-.43-.37-1.06-.42-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.17 1.06-.37 2.23-.42C8.42 2.17 8.8 2.16 12 2.16Zm0 1.8c-3.15 0-3.52.01-4.76.07-1.15.05-1.77.24-2.18.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.18-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.05 1.15.24 1.77.4 2.18.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.18.4 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c1.15-.05 1.77-.24 2.18-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.18.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.05-1.15-.24-1.77-.4-2.18a3.6 3.6 0 0 0-.88-1.35 3.6 3.6 0 0 0-1.35-.88c-.41-.16-1.03-.35-2.18-.4-1.24-.06-1.61-.07-4.76-.07Zm0 3.06a4.98 4.98 0 1 1 0 9.96 4.98 4.98 0 0 1 0-9.96Zm0 8.21a3.23 3.23 0 1 0 0-6.46 3.23 3.23 0 0 0 0 6.46Zm6.34-8.4a1.16 1.16 0 1 1-2.32 0 1.16 1.16 0 0 1 2.32 0Z"/></svg>
+          </a>
+          <a class="icon-link" href="https://x.com/sakura_enter"
+             target="_blank" rel="noopener noreferrer" aria-label="X de Sakura Enterprise">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.23l-4.88-6.38L6.5 22H3.38l7.24-8.28L1.6 2h6.39l4.41 5.83L18.9 2Zm-1.1 17.84h1.72L7.1 3.96H5.25L17.8 19.84Z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="hanko" aria-hidden="true">桜</span>
+      <p class="footer-copy">Sakura Enterprise © <span id="year">2026</span></p>
+      <p class="footer-note">Empresa ficticia creada como proyecto escolar.</p>
+    </div>
   </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a class="whatsapp-float" href="https://wa.me/50379980884?text=Hola%20Sakura%20Enterprise%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios."
+     target="_blank" rel="noopener noreferrer" aria-label="Escribir a Sakura Enterprise por WhatsApp">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.25 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.8-.23-.08-.4-.12-.56.12-.17.25-.64.8-.78.96-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.17 1.73 2.64 4.19 3.7.59.25 1.05.4 1.41.51.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
+    <span class="whatsapp-float-label">WhatsApp</span>
+  </a>
 
   <script src="script.js"></script>
 </body>
